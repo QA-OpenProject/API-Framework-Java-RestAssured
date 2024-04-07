@@ -25,15 +25,6 @@ public class payload {
 
 	}
 
-	// public static String UpdatePlace() {
-
-	// 	return "{\r\n" +
-	// 	"\"place_id\":\"" + placeId + "\",\r\n" +
-	// 	"\"address\":\"" + newAddress + "\",\r\n" +
-	// 	"\"key\":\"qaclick123\"\r\n" +
-	// 	"}";
-
-	// }
 
 	public static String CoursePrice() {
 
