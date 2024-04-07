@@ -11,7 +11,7 @@ public class payload {
 				"    \"lng\": 33.427362\r\n" +
 				"  },\r\n" +
 				"  \"accuracy\": 50,\r\n" +
-				"  \"name\": \"Rahul Shetty Academy\",\r\n" +
+				"  \"name\": \"Rahul Shetty Academy 22\",\r\n" +
 				"  \"phone_number\": \"(+91) 983 893 3937\",\r\n" +
 				"  \"address\": \"29, side layout, cohen 09\",\r\n" +
 				"  \"types\": [\r\n" +
@@ -24,6 +24,16 @@ public class payload {
 				"";
 
 	}
+
+	// public static String UpdatePlace() {
+
+	// 	return "{\r\n" +
+	// 	"\"place_id\":\"" + placeId + "\",\r\n" +
+	// 	"\"address\":\"" + newAddress + "\",\r\n" +
+	// 	"\"key\":\"qaclick123\"\r\n" +
+	// 	"}";
+
+	// }
 
 	public static String CoursePrice() {
 

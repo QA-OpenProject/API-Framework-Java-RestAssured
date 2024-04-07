@@ -21,19 +21,18 @@ public class Basics {
 		// when - Submit the API -resource,http method
 		// Then - validate the response
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
-		String response = given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json").body(payload.AddPlace())
+		String response = given().log().all().queryParam("key", "qaclick12322").header("Content-Type", "application/json").body(payload.AddPlace())
 				.when().post("maps/api/place/add/json")
 				.then().assertThat().statusCode(200).body("scope", equalTo("APP")).header("server", "Apache/2.4.18 (Ubuntu)").extract().response().asString();
+		System.out.println("The response is:" + response);
 
-		System.out.println(response);
-		JsonPath js = new JsonPath(response); // for parsing Json
+		// for parsing Json
+		JsonPath js = new JsonPath(response);
 		String placeId = js.getString("place_id");
-
-		System.out.println(placeId);
+		System.out.println("The placeId is:" + placeId);
 
 		// Update Place
 		String newAddress = "Summer Walk, Africa";
-
 		given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json")
 				.body("{\r\n" +
 						"\"place_id\":\"" + placeId + "\",\r\n" +
@@ -44,7 +43,6 @@ public class Basics {
 		.then().assertThat().log().all().statusCode(200).body("msg", equalTo("Address successfully updated"));
 
 		// Get Place
-
 		String getPlaceResponse = given().log().all().queryParam("key", "qaclick123").queryParam("place_id", placeId)
 				.when().get("maps/api/place/get/json")
 				.then().assertThat().log().all().statusCode(200).extract().response().asString();
@@ -52,6 +50,7 @@ public class Basics {
 		String actualAddress = js1.getString("address");
 		System.out.println(actualAddress);
 		Assert.assertEquals(actualAddress, "Pacific ocean");
+		
 		// Cucumber Junit, Testng
 
 	}
